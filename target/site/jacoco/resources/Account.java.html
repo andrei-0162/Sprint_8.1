@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>Account.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">Sprint_8</a> &gt; <a href="index.source.html" class="el_package">resources</a> &gt; <span class="el_source">Account.java</span></div><h1>Account.java</h1><pre class="source lang-java linenums">package resources;
+
+public class Account {
+
+    private final String name;
+
+<span class="fc" id="L7">    public Account(String name) {</span>
+<span class="fc" id="L8">        this.name = name;</span>
+<span class="fc" id="L9">    }</span>
+
+    public boolean checkNameToEmboss() {
+        //Мметод должен проверять, что сохранённая через конструктор строка соответствует требованиям.
+        //Если строка удовлетворяет условиям, метод возвращает true, иначе — false.
+<span class="pc bpc" id="L14" title="3 of 6 branches missed.">        if (checkNameLength() &amp;&amp; checkSpaceChar() &amp;&amp; checkMediumSpace()) {</span>
+<span class="fc" id="L15">            return true;</span>
+<span class="nc" id="L16">        } else return false;</span>
+    }
+    
+    public  boolean checkNameLength(){
+<span class="pc bpc" id="L20" title="2 of 4 branches missed.">        if (name.length()&gt;=3 &amp;&amp; name.length()&lt;=19) {return true;}        </span>
+<span class="nc" id="L21">            else return false;</span>
+    }
+
+    public boolean checkSpaceChar(){
+<span class="fc" id="L25">        int count = 0;</span>
+<span class="fc bfc" id="L26" title="All 2 branches covered.">        for (int i = 0; i &lt; name.length(); i++ ) {</span>
+<span class="fc bfc" id="L27" title="All 2 branches covered.">            if (name.charAt(i) == ' ') { count++; }</span>
+        }
+        
+<span class="pc bpc" id="L30" title="1 of 2 branches missed.">        if (count == 1) {return true;}</span>
+<span class="nc" id="L31">        else return false;</span>
+    }
+
+    public boolean checkMediumSpace(){
+<span class="pc bpc" id="L35" title="3 of 4 branches missed.">        if (name.charAt(0) != ' ' || name.charAt(name.length()) != ' ') {</span>
+<span class="fc" id="L36">            return true;</span>
+<span class="nc" id="L37">        } else return false;</span>
+    }
+
+
+
+    
+    
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.12.202403310830</span></div></body></html>
